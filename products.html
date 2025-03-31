@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VÉLORIA - L'essence de la beauté douce</title>
+    <link rel="stylesheet" href="styles/global.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <main class="container products-page">
+        <header class="products-header">
+            <h1>Nos Produits</h1>
+            <div class="product-filters">
+                <select id="category-filter">
+                    <option value="">Toutes les catégories</option>
+                    <option value="Skincare">Soins de la Peau</option>
+                    <option value="Haircare">Soins Capillaires</option>
+                    <option value="Body Care">Soins Corporels</option>
+                    <option value="Clean Beauty">Beauté Propre</option>
+                </select>
+                <div class="sort-options">
+                    <button id="sort-price-asc">Prix croissant</button>
+                    <button id="sort-price-desc">Prix décroissant</button>
+                </div>
+            </div>
+        </header>
+
+        <section id="products-container" class="products-grid"></section>
+
+        <div class="pagination">
+            <button id="prev-page">Précédent</button>
+            <span id="current-page">1</span>
+            <button id="next-page">Suivant</button>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <h4>À Propos</h4>
+                <ul>
+                    <li><a href="#">Notre Histoire</a></li>
+                    <li><a href="#">Notre Engagement</a></li>
+                    <li><a href="#">Nos Valeurs</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Service Client</h4>
+                <ul>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Livraison</a></li>
+                    <li><a href="#">Retours</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Suivez-nous</h4>
+                <div class="social-icons">
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-pinterest"></i></a>
+                </div>
+            </div>
+            <div class="newsletter">
+                <h4>Restez Informé</h4>
+                <form>
+                    <input type="email" placeholder="Votre email">
+                    <button type="submit">S'abonner</button>
+                </form>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2024 VÉLORIA. Tous droits réservés.</p>
+        </div>
+    </footer>
+    <script src="javascript/navigation.js"></script>
+    <script src="javascript/auth.js"></script>
+    <script src="javascript/dark-mode.js"></script>
+    <script src="javascript/mobile-menu.js"></script>
+    <script src="javascript/products.js"></script>
+    <script src="javascript/cart.js"></script>
+</body>
+</html>

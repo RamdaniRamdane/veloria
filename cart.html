@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VÉLORIA - Panier</title>
+    <link rel="stylesheet" href="styles/global.css">
+    <link rel="stylesheet" href="styles/dark-mode.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+   
+    <script src="javascript/auth.js"></script>
+</head>
+<body>
+    
+    <main class="container cart-container">
+        <h1>Votre Panier</h1>
+        
+        <div id="cart-items" class="cart-items-container">
+            <!-- Les articles du panier seront injectés ici -->
+        </div>
+
+        <div id="cart-total" class="cart-total">
+            Total : €0.00
+        </div>
+
+        <button class="cta-button checkout-btn" onclick="handleCheckout()">
+            Passer la commande
+        </button>
+    </main>
+
+   <script src="javascript/navigation.js"></script>
+    <script src="javascript/dark-mode.js"></script>
+    <script src="javascript/cart.js"></script>
+    
+    <script>
+        // Gestion de la commande
+        function handleCheckout() {
+            if(getUserCart().length === 0) {
+                alert('Votre panier est vide !');
+                return;
+            }
+            
+            if(confirm('Confirmer la commande ?')) {
+                localStorage.removeItem('veloria_carts');
+                updateCartDisplay();
+                alert('Commande validée ! Merci pour votre achat.');
+            }
+        }
+    </script>
+</body>
+</html>
