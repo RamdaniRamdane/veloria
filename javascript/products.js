@@ -1,51 +1,84 @@
 const products = [
     {
-        id: 'skincare-01',
-        name: 'Sérum Hydratant à la Rose',
-        category: 'Skincare',
-        price: 45.99,
-        description: 'Hydratation intense avec extrait de rose biologique.',
-        image: 'images/skincare.png'
-    },
-    {
-        id: 'haircare-01',
-        name: 'Huile Capillaire à l\'Argan Nourrissante',
+        id: 'haircare-02',
+        name: 'Masque Capillaire Nourrissant à l\'Argan',
         category: 'Haircare',
-        price: 34.50,
-        description: 'Restaure l\'éclat et la force avec de l\'huile d\'argan pure.',
-        image: 'images/serum.png'
+        price: 27.88,
+        description: 'Nourrit et répare les cheveux secs et abîmés',
+        image: 'images/masque_argan.jpg'
     },
     {
-        id: 'bodycare-01',
-        name: 'Beurre Corporel à la Lavande',
-        category: 'Body Care',
-        price: 29.99,
-        description: 'Beurre corporel ultra-hydratant avec de la lavande apaisante.',
-        image: 'images/cleaningGel.png'
+        id: 'haircare-03',
+        name: 'Shampooing Douceur Naturelle',
+        category: 'Haircare',
+        price: 22.5,
+        description: 'Shampooing 100% naturel pour des cheveux propres, doux et brillants.',
+        image: 'images/shampooing_naturel.jpg'
     },
     {
-        id: 'clean-beauty-01',
-        name: 'Baume à Lèvres Écologique',
+        id: 'haircare-04',
+        name: 'Après-Shampooing Douceur Intense',
+        category: 'Haircare',
+        price: 24.99,
+        description: 'Après-shampooing 100% naturel pour des cheveux démêlés, doux et brillants.',
+        image: 'images/apres_shampooing.jpg'
+    },
+    {
+        id: 'haircare-05',
+        name: 'Shampooing Sec',
+        category: 'Haircare',
+        price: 19,
+        description: 'Shampooing sec pour des cheveux propres et volumineux en un instant.',
+        image: 'images/shampooing_sec.jpg'
+    },
+    {
+        id: 'clean-beauty-02',
+        name: 'Démaquillant Douceur Naturelle',
         category: 'Clean Beauty',
-        price: 12.99,
-        description: 'Soin des lèvres durable avec des ingrédients naturels.',
-        image: 'images/champ.png'
+        price: 26.99,
+        description: 'Démaquille efficacement et préserve l\'hydratation naturelle.',
+        image: 'images/demaquillant.jpg'
     },
     {
-        id: 'skincare-02',
-        name: 'Crème Éclaircissante à la Vitamine C',
+        id: 'clean-beauty-03',
+        name: 'Rouge à Lèvres',
+        category: 'Clean Beauty',
+        price: 28,
+        description: 'Rouge à lèvres pour des lèvres colorées et hydratées.',
+        image: 'images/rouge_levres.jpg'
+    },
+    {
+        id: 'clean-beauty-04',
+        name: 'Mascara Volume',
+        category: 'Clean Beauty',
+        price: 19.99,
+        description: 'Mascara pour des cils volumineux et définis.',
+        image: 'images/mascara.jpg'
+    },
+    {
+        id: 'clean-beauty-05',
+        name: 'Fond de Teint',
+        category: 'Clean Beauty',
+        price: 34.99,
+        description: 'Fond de teint pour un teint parfait et lumineux.',
+        image: 'images/fond_teint.jpg'
+    },
+    {
+        id: 'skincare-01',
+        name: 'Crème Hydratante Peau Douce',
         category: 'Skincare',
-        price: 55.00,
-        description: 'Illuminez votre peau avec notre formule puissante à la Vitamine C.',
-        image: 'images/makillage.png'
-    },
-    {
-        id: 'bodycare-02',
-        name: 'Gommage Corporel aux Sels Minéraux',
-        category: 'Body Care',
-        price: 39.99,
-        description: 'Gommage exfoliant avec des sels minéraux naturels.',
-        image: 'images/skincare.png'
+        price: 22.66,
+        description: 'Une crème hydratante pour une peau douce et éclatante. Nourrit intensément et protège contre le dessèchement.',
+        benefits: [
+            'Hydratation intense',
+            'Protection contre le dessèchement'
+        ],
+        key_ingredients: [
+            'Aloe Vera : Apaise et hydrate la peau.',
+            'Beurre de Karité : Nourrit et protège la peau.',
+            'Acide Hyaluronique : Maintient l\'hydratation et repulpe la peau.'
+        ],
+        image: 'images/creme.jpg'
     }
 ];
 
@@ -54,7 +87,7 @@ class ProductManager {
         this.products = products;
         this.filteredProducts = [...products];
         this.currentPage = 1;
-        this.productsPerPage = 6;
+        this.productsPerPage = 20;
 
         this.initEventListeners();
     }

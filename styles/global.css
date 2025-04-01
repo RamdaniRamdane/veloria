@@ -114,6 +114,7 @@ nav {
     top: 0;
     z-index: 100;
     backdrop-filter: blur(5px);
+    transition: all 0.3s ease;
 }
 
 .nav-container {
@@ -122,6 +123,17 @@ nav {
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
+}
+
+
+nav.scrolled {
+    background-color: rgba(250, 243, 224, 0.95); /* Slightly transparent version of your background */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 5px 10px;
+}
+
+.dark-mode nav.scrolled {
+    background-color: rgba(24, 26, 27, 0.95); /* Dark mode version */
 }
 
 nav img.logo {
@@ -757,25 +769,73 @@ footer {
 
 /* Tablets - 768px and below */
 @media screen and (max-width: 768px) {
-    .nav-menu {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        background-color: var(--primary-color);
-        padding: 20px;
+    .nav-container {
+        padding: 0 15px;
     }
-
-    .nav-menu.active {
-        display: flex;
-    }
-
+    
     .menu-toggle {
         display: flex;
+        z-index: 101;
     }
-
+    
+    .menu-toggle.active .bar:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+    
+    .menu-toggle.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .menu-toggle.active .bar:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+    
+    .nav-menu {
+        position: fixed;
+        right: -100%;
+        top: 0;
+        flex-direction: column;
+        background-color: var(--background-color);
+        width: 80%;
+        max-width: 300px;
+        height: 100vh;
+        padding-top: 70px;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .dark-mode .nav-menu {
+        background-color: var(--dark-background);
+    }
+    
+    .nav-menu.active {
+        right: 0;
+        overflow-y: auto;
+    }
+    
+    .nav-menu li {
+        margin: 15px 0;
+    }
+    
+    .auth-section {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 20px;
+    }
+    
+    .user-email {
+        font-size: 0.85rem;
+        word-break: break-all;
+        max-width: 90%;
+    }
+    
+    /* Add some spacing at the bottom of the menu */
+    .nav-menu::after {
+        content: "";
+        display: block;
+        height: 40px;
+    }
     .product-grid {
         grid-template-columns: 1fr;
     }
@@ -881,6 +941,14 @@ footer {
     .features {
         grid-template-columns: 1fr;
     }
+        nav img.logo {
+        max-width: 60px;
+    }
+    
+    .nav-menu {
+        width: 85%;
+    }
+   }
 }
 /* =============================================
    FORM STYLING (Signup & Login)
@@ -888,7 +956,7 @@ footer {
 .container h1 {
     margin-bottom: 2rem;
     color: var(--text-color);
-    text-align: center;
+    text-align: center;!important
     font-size: 2.5rem;
 }
 .dark-mode .container h1{
