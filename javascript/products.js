@@ -231,7 +231,7 @@ class ProductManager {
             const productCard = document.createElement('div');
             productCard.classList.add('product-card');
             productCard.innerHTML = `
-                <img src="${product.image}" alt="${product.name}">
+                <img src="${product.image}" alt="${product.name}" loading="lazy">
                 <h3>${product.name}</h3>
                 <p>${product.category}</p>
                 <p>${product.price.toFixed(2)} €</p>
