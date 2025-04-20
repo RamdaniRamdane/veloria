@@ -79,6 +79,62 @@ const products = [
             'Acide Hyaluronique : Maintient l\'hydratation et repulpe la peau.'
         ],
         image: 'images/creme.jpg'
+    },
+        {
+        id: 'haircare-006',
+        name: 'Après-Shampooing Douceur Intense',
+        category: 'Haircare',
+        price: 24.99,
+        description: 'Après-shampooing 100% naturel pour des cheveux démêlés, doux et brillants.',
+        image: 'images/shampIntnace.jpg'
+    },
+    {
+        id: 'bodycare-003',
+        name: 'Shower Gel',
+        category: 'Body Care',
+        price: 19.99,
+        description: 'Enrichi en extraits de plantes et huiles essentielles',
+        image: 'images/gelShower.jpg'
+    },
+    {
+        id: 'bodycare-004',
+        name: 'Lait Corporel 100% Naturel',
+        category: 'Body Care',
+        price: 24.55,
+        description: 'Une hydratation légère et une peau douce comme de la soie.',
+        image: 'images/corporalMilk.jpg'
+    },
+    {
+        id: 'bodycare-005',
+        name: 'Brume Corporelle',
+        category: 'Body Care',
+        price: 22.30,
+        description: 'Une sensation de fraîcheur et un parfum délicat tout au long de la journée.',
+        image: 'images/brumecorp.jpg'
+    },
+    {
+        id: 'skincare-003',
+        name: "Gel Nettoyant Douceur d'Argan",
+        category: 'Skincare',
+        price: 50,
+        description: "Nettoyage et hydratation de peau avec huile d'argan",
+        image: 'images/gelNetoiArga.jpg'
+    },
+    {
+        id: 'skincare-004',
+        name: "Natural Toner avec Huile d'Argan",
+        category: 'Skincare',
+        price: 29.99,
+        description: 'Laisse la peau douce, lisse et éclatante',
+        image: 'images/toner.jpg'
+    },
+    {
+        id: 'skincare-005',
+        name: 'Crème Solaire',
+        category: 'Skincare',
+        price: 34.99,
+        description: 'Protège votre peau',
+        image: 'images/solar.jpg'
     }
 ];
 
@@ -87,7 +143,7 @@ class ProductManager {
         this.products = products;
         this.filteredProducts = [...products];
         this.currentPage = 1;
-        this.productsPerPage = 20;
+        this.productsPerPage = 12;
 
         this.initEventListeners();
     }
